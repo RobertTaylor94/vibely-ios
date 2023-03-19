@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @EnvironmentObject private var authModel: AuthViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        Group {
+            if authModel.user != nil {
+                HomeView()
+            } else {
+                LoginView()
+            }
+        }.onAppear {
+            authModel.listenToAuthState()
         }
-        .padding()
     }
 }
 
