@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		E165AF0B29C4305B000E3E57 /* vibelyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E165AF0A29C4305B000E3E57 /* vibelyApp.swift */; };
-		E165AF0D29C4305B000E3E57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E165AF0C29C4305B000E3E57 /* ContentView.swift */; };
+		E165AF0D29C4305B000E3E57 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E165AF0C29C4305B000E3E57 /* MainView.swift */; };
 		E165AF0F29C4305D000E3E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E165AF0E29C4305D000E3E57 /* Assets.xcassets */; };
 		E165AF1229C4305D000E3E57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E165AF1129C4305D000E3E57 /* Preview Assets.xcassets */; };
+		E165AF1C29C431C2000E3E57 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E165AF1B29C431C2000E3E57 /* SignUpView.swift */; };
+		E165AF1E29C68CDA000E3E57 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E165AF1D29C68CD9000E3E57 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E165AF0729C4305B000E3E57 /* vibely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vibely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E165AF0A29C4305B000E3E57 /* vibelyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vibelyApp.swift; sourceTree = "<group>"; };
-		E165AF0C29C4305B000E3E57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E165AF0C29C4305B000E3E57 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E165AF0E29C4305D000E3E57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E165AF1129C4305D000E3E57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E165AF1B29C431C2000E3E57 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		E165AF1D29C68CD9000E3E57 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				E165AF0A29C4305B000E3E57 /* vibelyApp.swift */,
-				E165AF0C29C4305B000E3E57 /* ContentView.swift */,
+				E165AF1A29C4316F000E3E57 /* Model */,
+				E165AF1829C43149000E3E57 /* View */,
+				E165AF1929C43155000E3E57 /* ViewModel */,
 				E165AF0E29C4305D000E3E57 /* Assets.xcassets */,
 				E165AF1029C4305D000E3E57 /* Preview Content */,
 			);
@@ -65,6 +71,30 @@
 				E165AF1129C4305D000E3E57 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E165AF1829C43149000E3E57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E165AF0C29C4305B000E3E57 /* MainView.swift */,
+				E165AF1B29C431C2000E3E57 /* SignUpView.swift */,
+				E165AF1D29C68CD9000E3E57 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E165AF1929C43155000E3E57 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E165AF1A29C4316F000E3E57 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +167,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E165AF0D29C4305B000E3E57 /* ContentView.swift in Sources */,
+				E165AF0D29C4305B000E3E57 /* MainView.swift in Sources */,
+				E165AF1C29C431C2000E3E57 /* SignUpView.swift in Sources */,
 				E165AF0B29C4305B000E3E57 /* vibelyApp.swift in Sources */,
+				E165AF1E29C68CDA000E3E57 /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
