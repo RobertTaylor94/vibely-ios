@@ -12,6 +12,9 @@ import SwiftUI
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    @State private var showPassword = false
+    
+    @EnvironmentObject private var authModel: AuthViewModel
 
     var body: some View {
         VStack {
@@ -26,17 +29,43 @@ struct LoginView: View {
                 TextField("Enter your email", text: $email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.bottom, 20)
+                    .textInputAutocapitalization(.never)
 
                 Text("Password")
                     .font(.headline)
-                SecureField("Enter your password", text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.bottom, 20)
+                HStack {
+                    Group {
+                        if showPassword {
+                            TextField("Enter your password", text: $password)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .padding(.bottom, 20)
+                                .textInputAutocapitalization(.never)
+                        } else {
+                            SecureField("Enter your password", text: $password)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .padding(.bottom, 20)
+                                .textInputAutocapitalization(.never)
+                        }
+                    }
+                    
+                    Button(action: {
+                        showPassword.toggle()
+                    }, label: {
+                        Group {
+                            if showPassword {
+                                Image(systemName: "eye")
+                            } else {
+                                Image(systemName: "eye.slash")
+                            }
+                        }
+                    })
+                }
+                
             }
             .padding()
 
             Button(action: {
-                // Perform login action here
+                authModel.signIn(emailAddress: email, password: password)
             }) {
                 Text("Login")
                     .foregroundColor(.white)
