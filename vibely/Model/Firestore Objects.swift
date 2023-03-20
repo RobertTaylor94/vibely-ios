@@ -20,3 +20,7 @@ struct Vibe: Codable, Identifiable {
     var displayName: String
     var post: String
 }
+
+struct SearchResult: Codable {
+    var uid: String
+}

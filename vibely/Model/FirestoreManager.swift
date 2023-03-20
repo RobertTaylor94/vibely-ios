@@ -15,6 +15,8 @@ class FirestoreManager: ObservableObject {
     let db = Firestore.firestore()
     @Published var userData = UserData(displayName: "", bio: "", uid: "")
     @Published var userPosts = [Vibe]()
+    @Published var searchResult = SearchResult(uid: "")
+    @Published var foundUser = UserData(displayName: "", bio: "", uid: "")
     
     func getCurrentUserData(uid: String) {
         let docRef = db.collection("users").document(uid)
@@ -26,6 +28,26 @@ class FirestoreManager: ObservableObject {
                 if let document = document {
                     do {
                         self.userData = try document.data(as: UserData.self)
+                        print(self.userData)
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+            
+        }
+    }
+    
+    func getSearchedUserData(uid: String) {
+        let docRef = db.collection("users").document(uid)
+        
+        docRef.getDocument { document, err in
+            if let err = err {
+                print(err)
+            } else {
+                if let document = document {
+                    do {
+                        self.foundUser = try document.data(as: UserData.self)
                         print(self.userData)
                     } catch {
                         print(error)
@@ -53,6 +75,25 @@ class FirestoreManager: ObservableObject {
                     print(doc.data())
                 }
                 print("POSTS: \(self.userPosts)")
+            }
+        }
+    }
+    
+    func searchUsers(email: String) {
+        let documentName = "Optional(\"\(email)\")"
+        let docRef = db.collection("userSearch").document(documentName)
+        docRef.getDocument { document, err in
+            if let err = err {
+                print("Error fetching users: \(err)")
+            } else {
+                if let document = document {
+                    do {
+                        self.searchResult = try document.data(as: SearchResult.self)
+                        self.getSearchedUserData(uid: self.searchResult.uid)
+                    } catch {
+                        print("no user found")
+                    }
+                }
             }
         }
     }

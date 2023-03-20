@@ -16,12 +16,14 @@ struct HomeView: View {
             FeedView()
                 .tabItem{
                     Label("Feed", systemImage: "newspaper.circle")}
+            UserSearchView()
+                .tabItem {
+                    Label("Search", systemImage: "magnifyingglass.circle")}
             Group {
                 if authModel.user != nil {
                     ProfileView()
                         .tabItem {
-                            Label("Profile", systemImage: "person.circle")
-                        }
+                            Label("Profile", systemImage: "person.circle")}
                 } else {
                     SignUpView()
                 }

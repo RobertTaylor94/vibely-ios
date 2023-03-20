@@ -46,7 +46,10 @@ final class AuthViewModel: ObservableObject {
                     "uid": self.user!.uid
                 ])
                 self.updateDisplayname(displayName: displayName)
-        }
+                self.fireStore.db.collection("userSearch").document("\(String(describing: self.user!.email))").setData([
+                    "uid": self.user!.uid
+                ])
+            }
         }
     }
     
