@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E137175629C72B5F00F8C12A /* CompleteProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137175529C72B5F00F8C12A /* CompleteProfileView.swift */; };
+		E137175829C80B9200F8C12A /* Firestore Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137175729C80B9200F8C12A /* Firestore Objects.swift */; };
+		E137175A29C873BC00F8C12A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137175929C873BC00F8C12A /* Post.swift */; };
 		E165AF0B29C4305B000E3E57 /* vibelyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E165AF0A29C4305B000E3E57 /* vibelyApp.swift */; };
 		E165AF0D29C4305B000E3E57 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E165AF0C29C4305B000E3E57 /* MainView.swift */; };
 		E165AF0F29C4305D000E3E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E165AF0E29C4305D000E3E57 /* Assets.xcassets */; };
@@ -21,9 +24,13 @@
 		E165AF2C29C69B59000E3E57 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E165AF2B29C69B59000E3E57 /* HomeView.swift */; };
 		E165AF2E29C6A041000E3E57 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E165AF2D29C6A041000E3E57 /* FeedView.swift */; };
 		E165AF3029C6A055000E3E57 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E165AF2F29C6A055000E3E57 /* ProfileView.swift */; };
+		E1B7A3E929C6D36F002282AE /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B7A3E829C6D36F002282AE /* FirestoreManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E137175529C72B5F00F8C12A /* CompleteProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteProfileView.swift; sourceTree = "<group>"; };
+		E137175729C80B9200F8C12A /* Firestore Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore Objects.swift"; sourceTree = "<group>"; };
+		E137175929C873BC00F8C12A /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		E165AF0729C4305B000E3E57 /* vibely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vibely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E165AF0A29C4305B000E3E57 /* vibelyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vibelyApp.swift; sourceTree = "<group>"; };
 		E165AF0C29C4305B000E3E57 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -36,6 +43,7 @@
 		E165AF2B29C69B59000E3E57 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E165AF2D29C6A041000E3E57 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		E165AF2F29C6A055000E3E57 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		E1B7A3E829C6D36F002282AE /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,8 @@
 				E165AF2B29C69B59000E3E57 /* HomeView.swift */,
 				E165AF2D29C6A041000E3E57 /* FeedView.swift */,
 				E165AF2F29C6A055000E3E57 /* ProfileView.swift */,
+				E137175529C72B5F00F8C12A /* CompleteProfileView.swift */,
+				E137175929C873BC00F8C12A /* Post.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -114,6 +124,8 @@
 		E165AF1A29C4316F000E3E57 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E1B7A3E829C6D36F002282AE /* FirestoreManager.swift */,
+				E137175729C80B9200F8C12A /* Firestore Objects.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,10 +212,14 @@
 				E165AF3029C6A055000E3E57 /* ProfileView.swift in Sources */,
 				E165AF0D29C4305B000E3E57 /* MainView.swift in Sources */,
 				E165AF1C29C431C2000E3E57 /* SignUpView.swift in Sources */,
+				E137175A29C873BC00F8C12A /* Post.swift in Sources */,
 				E165AF2A29C691B7000E3E57 /* AuthViewModel.swift in Sources */,
 				E165AF2C29C69B59000E3E57 /* HomeView.swift in Sources */,
+				E137175629C72B5F00F8C12A /* CompleteProfileView.swift in Sources */,
 				E165AF0B29C4305B000E3E57 /* vibelyApp.swift in Sources */,
 				E165AF1E29C68CDA000E3E57 /* LoginView.swift in Sources */,
+				E137175829C80B9200F8C12A /* Firestore Objects.swift in Sources */,
+				E1B7A3E929C6D36F002282AE /* FirestoreManager.swift in Sources */,
 				E165AF2E29C6A041000E3E57 /* FeedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
