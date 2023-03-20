@@ -13,7 +13,7 @@ struct SignUpView: View {
     @State var password = ""
     @State private var showPassword = false
     
-    @EnvironmentObject private var authModel: AuthViewModel
+//    @EnvironmentObject private var authModel: AuthViewModel
     
     var body: some View {
         NavigationView {
@@ -67,17 +67,15 @@ struct SignUpView: View {
                 }
                 .padding()
                 
-                Button(action: {
-                    authModel.signUp(emailAddress: email, password: password)
-                }) {
-                    Text("Register")
-                        .foregroundColor(.white)
-                        .padding(.vertical, 10)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                }
+                NavigationLink(destination: CompleteProfileView(email: $email, password: $password), label: {
+                        Text("Register")
+                            .foregroundColor(.white)
+                            .padding(.vertical, 10)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                })
                 
                 VStack {
                     Text("Already got an account?")
