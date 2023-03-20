@@ -48,7 +48,7 @@ struct ProfileView: View {
                     })
                 })
                     ToolbarItem(placement: .principal, content: {
-                        Text(authModel.user!.displayName!)
+                        Text(firestore.userData.displayName)
                             .font(.headline)
                     })
             }

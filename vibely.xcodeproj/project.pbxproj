@@ -10,6 +10,9 @@
 		E137175629C72B5F00F8C12A /* CompleteProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137175529C72B5F00F8C12A /* CompleteProfileView.swift */; };
 		E137175829C80B9200F8C12A /* Firestore Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137175729C80B9200F8C12A /* Firestore Objects.swift */; };
 		E137175A29C873BC00F8C12A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137175929C873BC00F8C12A /* Post.swift */; };
+		E137175C29C8F69000F8C12A /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137175B29C8F69000F8C12A /* SearchBar.swift */; };
+		E137175E29C8F99C00F8C12A /* UserSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137175D29C8F99C00F8C12A /* UserSearchView.swift */; };
+		E137176029C9056500F8C12A /* SearchProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137175F29C9056500F8C12A /* SearchProfile.swift */; };
 		E165AF0B29C4305B000E3E57 /* vibelyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E165AF0A29C4305B000E3E57 /* vibelyApp.swift */; };
 		E165AF0D29C4305B000E3E57 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E165AF0C29C4305B000E3E57 /* MainView.swift */; };
 		E165AF0F29C4305D000E3E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E165AF0E29C4305D000E3E57 /* Assets.xcassets */; };
@@ -31,6 +34,9 @@
 		E137175529C72B5F00F8C12A /* CompleteProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteProfileView.swift; sourceTree = "<group>"; };
 		E137175729C80B9200F8C12A /* Firestore Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore Objects.swift"; sourceTree = "<group>"; };
 		E137175929C873BC00F8C12A /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		E137175B29C8F69000F8C12A /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		E137175D29C8F99C00F8C12A /* UserSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchView.swift; sourceTree = "<group>"; };
+		E137175F29C9056500F8C12A /* SearchProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProfile.swift; sourceTree = "<group>"; };
 		E165AF0729C4305B000E3E57 /* vibely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vibely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E165AF0A29C4305B000E3E57 /* vibelyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vibelyApp.swift; sourceTree = "<group>"; };
 		E165AF0C29C4305B000E3E57 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -109,6 +115,9 @@
 				E165AF2F29C6A055000E3E57 /* ProfileView.swift */,
 				E137175529C72B5F00F8C12A /* CompleteProfileView.swift */,
 				E137175929C873BC00F8C12A /* Post.swift */,
+				E137175B29C8F69000F8C12A /* SearchBar.swift */,
+				E137175D29C8F99C00F8C12A /* UserSearchView.swift */,
+				E137175F29C9056500F8C12A /* SearchProfile.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,10 +219,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E165AF3029C6A055000E3E57 /* ProfileView.swift in Sources */,
+				E137176029C9056500F8C12A /* SearchProfile.swift in Sources */,
 				E165AF0D29C4305B000E3E57 /* MainView.swift in Sources */,
 				E165AF1C29C431C2000E3E57 /* SignUpView.swift in Sources */,
 				E137175A29C873BC00F8C12A /* Post.swift in Sources */,
 				E165AF2A29C691B7000E3E57 /* AuthViewModel.swift in Sources */,
+				E137175E29C8F99C00F8C12A /* UserSearchView.swift in Sources */,
 				E165AF2C29C69B59000E3E57 /* HomeView.swift in Sources */,
 				E137175629C72B5F00F8C12A /* CompleteProfileView.swift in Sources */,
 				E165AF0B29C4305B000E3E57 /* vibelyApp.swift in Sources */,
@@ -221,6 +232,7 @@
 				E137175829C80B9200F8C12A /* Firestore Objects.swift in Sources */,
 				E1B7A3E929C6D36F002282AE /* FirestoreManager.swift in Sources */,
 				E165AF2E29C6A041000E3E57 /* FeedView.swift in Sources */,
+				E137175C29C8F69000F8C12A /* SearchBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
