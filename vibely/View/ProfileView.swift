@@ -27,13 +27,6 @@ struct ProfileView: View {
                     }
                 }
                 Spacer()
-                Button(action: {
-                    authModel.signOut()
-                }, label: {
-                    Text("Sign Out")
-                        .bold()
-                })
-                
             }.onAppear {
                 firestore.getCurrentUserData(uid: authModel.user!.uid)
                 firestore.getUserPosts(uid: authModel.user!.uid)
