@@ -16,10 +16,16 @@ struct HomeView: View {
             FeedView()
                 .tabItem{
                     Label("Feed", systemImage: "newspaper.circle")}
-            ProfileView()
-                .tabItem{
-                    Label("Profile", systemImage: "person.circle.fill")
+            Group {
+                if authModel.user != nil {
+                    ProfileView()
+                        .tabItem {
+                            Label("Profile", systemImage: "person.circle")
+                        }
+                } else {
+                    SignUpView()
                 }
+            }
         }
     }
 }
