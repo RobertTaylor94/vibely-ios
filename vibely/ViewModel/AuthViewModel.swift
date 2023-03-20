@@ -11,6 +11,8 @@ import FirebaseAuth
 
 final class AuthViewModel: ObservableObject {
     
+    var fireStore = FirestoreManager()
+    
     var user: User? {
         didSet {
             objectWillChange.send()
@@ -28,13 +30,23 @@ final class AuthViewModel: ObservableObject {
     
     func signUp(
         emailAddress: String,
-        password: String
+        password: String,
+        displayName: String,
+        bio: String
     ) {
         Auth.auth().createUser(withEmail: emailAddress, password: password) { result, error in
             if let error = error {
-                print("an error occured: \(error.localizedDescription)")
+                print("an error occured \(error.localizedDescription)")
                 return
-            }
+            } else {
+                print(result!)
+                self.fireStore.db.collection("users").document("\(self.user!.uid)").setData([
+                    "displayName": displayName,
+                    "bio": bio,
+                    "uid": self.user!.uid
+                ])
+                self.updateDisplayname(displayName: displayName)
+        }
         }
     }
     
@@ -54,4 +66,13 @@ final class AuthViewModel: ObservableObject {
             print("Error signing out: %@", signOutError)
         }
     }
+    
+    func updateDisplayname(displayName: String) {
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = displayName
+        changeRequest?.commitChanges { error in
+            print(error)
+        }
+    }
+    
 }
