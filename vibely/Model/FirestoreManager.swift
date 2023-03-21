@@ -13,10 +13,10 @@ import FirebaseFirestoreSwift
 class FirestoreManager: ObservableObject {
     
     let db = Firestore.firestore()
-    @Published var userData = UserData(displayName: "", bio: "", uid: "")
+    @Published var userData = UserData(displayName: "", bio: "", uid: "", followers: [])
     @Published var userPosts = [Vibe]()
     @Published var searchResult = SearchResult(uid: "")
-    @Published var foundUser = UserData(displayName: "", bio: "", uid: "")
+    @Published var foundUser = UserData(displayName: "", bio: "", uid: "", followers: [])
     
     func getCurrentUserData(uid: String) {
         let docRef = db.collection("users").document(uid)
@@ -28,7 +28,6 @@ class FirestoreManager: ObservableObject {
                 if let document = document {
                     do {
                         self.userData = try document.data(as: UserData.self)
-                        print(self.userData)
                     } catch {
                         print(error)
                     }
@@ -48,7 +47,6 @@ class FirestoreManager: ObservableObject {
                 if let document = document {
                     do {
                         self.foundUser = try document.data(as: UserData.self)
-                        print(self.userData)
                     } catch {
                         print(error)
                     }
@@ -67,14 +65,12 @@ class FirestoreManager: ObservableObject {
                 for doc in querySnapshot!.documents {
                     do {
                         let vibe = try doc.data(as: Vibe.self)
-                        print("VIBE: \(vibe)")
                         self.userPosts.append(vibe)
                     } catch {
                         print("for doc in error: \(error)")
                     }
                     print(doc.data())
                 }
-                print("POSTS: \(self.userPosts)")
             }
         }
     }
@@ -96,6 +92,25 @@ class FirestoreManager: ObservableObject {
                 }
             }
         }
+    }
+    
+    func addToFollowers(uid: String) {
+        userData.followers.append(uid)
+        let docref = db.collection("users").document("\(userData.uid)")
+        docref.updateData([
+            "followers": FieldValue.arrayUnion(["\(uid)"])
+        ])
+    }
+    
+    func removeFromFollowers(uid: String) {
+        if userData.followers.contains("\(uid)") {
+            let index = userData.followers.firstIndex(of: uid)
+            userData.followers.remove(at: index!)
+        }
+        let docref = db.collection("users").document("\(userData.uid)")
+        docref.updateData([
+            "followers": FieldValue.arrayRemove(["\(uid)"])
+        ])
     }
 }
 

@@ -19,7 +19,10 @@ struct UserSearchView: View {
                 .font(.largeTitle)
             SearchBar(text: $text)
             Divider()
-            SearchProfile(user: firestore.foundUser.displayName, email: "", bio: firestore.foundUser.bio)
+            SearchProfile(user: firestore.foundUser.displayName, email: "", bio: firestore.foundUser.bio, uid: firestore.foundUser.uid)
+            Group {
+                
+            }
             Spacer()
         }
     }

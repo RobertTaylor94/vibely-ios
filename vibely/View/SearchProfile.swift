@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct SearchProfile: View {
-    
+    @EnvironmentObject private var authModel: AuthViewModel
+    @EnvironmentObject private var firestore: FirestoreManager
     var user: String
     var email: String
     var bio: String
+    var uid: String
     
     var body: some View {
         VStack {
@@ -29,6 +31,30 @@ struct SearchProfile: View {
                 .font(.body)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding([.bottom, .leading, .trailing], 20)
+            Group {
+                if firestore.userData.followers.contains(uid) {
+                    Text("Following")
+                        .foregroundColor(.white)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 20)
+                        .background(Color.green)
+                        .cornerRadius(10)
+                        .padding([.leading, .trailing, .bottom], 20)
+                } else if user != "" && user != authModel.user!.displayName {
+                    Button {
+                        //add to followers
+                        firestore.addToFollowers(uid: uid)
+                    } label: {
+                        Text("Follow")
+                            .foregroundColor(.white)
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 20)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                            .padding([.leading, .trailing, .bottom], 20)
+                    }
+                }
+            }
         }
         .background(
             RoundedRectangle(cornerRadius: 10, style: .continuous)
@@ -41,6 +67,6 @@ struct SearchProfile: View {
 
 struct SearchProfile_Previews: PreviewProvider {
     static var previews: some View {
-        SearchProfile(user: "Murvoth", email: "text@email.com", bio: "Bio goes here")
+        SearchProfile(user: "Murvoth", email: "text@email.com", bio: "Bio goes here", uid: "")
     }
 }

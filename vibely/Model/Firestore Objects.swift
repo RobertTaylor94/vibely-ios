@@ -13,6 +13,7 @@ struct UserData: Codable {
     var displayName: String
     var bio: String
     var uid: String
+    var followers: [String]
 }
 
 struct Vibe: Codable, Identifiable {
