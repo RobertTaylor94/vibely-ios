@@ -9,7 +9,9 @@ We wanted to create a new social media app that got rid of some of the clutter o
 ## Links
 
 The GitHub repo and deployed links for the web version of the Vibely app built as a group project at the end of my bootcamp.
-[Vibely](https://github.com/MattGaarder/vibely)
+
+[Vibely Repo](https://github.com/MattGaarder/vibely)
+
 [Vibely Web](https://endearing-sundae-33b843.netlify.app/#/signup)
 
 ## Gallery
