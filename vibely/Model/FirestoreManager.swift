@@ -56,6 +56,8 @@ class FirestoreManager: ObservableObject {
         }
     }
     
+    //MARK: Get Posts Functions
+    
     func getUserPosts(uid: String) {
         db.collection("vibes").document(uid).collection("posts").getDocuments { querySnapshot, error in
             if let error = error {
@@ -73,6 +75,10 @@ class FirestoreManager: ObservableObject {
                 }
             }
         }
+    }
+    
+    func getFullFeed() {
+        
     }
     
     //MARK: User Search functions
