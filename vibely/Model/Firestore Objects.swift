@@ -20,6 +20,8 @@ struct Vibe: Codable, Identifiable {
     @DocumentID public var id: String?
     var displayName: String
     var post: String
+    var uid: String
+    var timeStamp: Double
 }
 
 struct SearchResult: Codable {

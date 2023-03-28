@@ -56,6 +56,13 @@ class FirestoreManager: ObservableObject {
         }
     }
     
+    func newPost(content: String) {
+        let newPost = Vibe(displayName: userData.displayName, post: content, uid: userData.uid, timeStamp: Date().timeIntervalSince1970)
+        print("new post function run")
+        let docRef = db.collection("vibes").document(userData.uid).collection("posts")
+        docRef.addDocument(from: newPost)
+    }
+    
     //MARK: Get Posts Functions
     
     func getUserPosts(uid: String) {

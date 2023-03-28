@@ -10,6 +10,7 @@ import SwiftUI
 struct FeedView: View {
     
     @State private var selection = "Show All"
+    @EnvironmentObject private var firestore: FirestoreManager
     
     var body: some View {
         ZStack {
@@ -29,6 +30,7 @@ struct FeedView: View {
                     Spacer()
                     Button(action: {
                         // Add post
+                        firestore.newPost(content: "new post")
                     }) {
                         Image(systemName: "plus.circle")
                             .resizable()
