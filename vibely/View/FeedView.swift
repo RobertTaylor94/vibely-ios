@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct FeedView: View {
+    
+    @State private var selection = "Show All"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Picker("", selection: $selection) {
+                Text("Show All").tag("Show All")
+                Text("Show Followers").tag("Show Followers")
+            }
+            .pickerStyle(.segmented)
+            Text("Hello, World!")
+        }
+        
     }
 }
 

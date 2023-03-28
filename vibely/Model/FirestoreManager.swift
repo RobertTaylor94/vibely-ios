@@ -75,6 +75,8 @@ class FirestoreManager: ObservableObject {
         }
     }
     
+    //MARK: User Search functions
+    
     func searchUsers(email: String) {
         let documentName = "Optional(\"\(email)\")"
         let docRef = db.collection("userSearch").document(documentName)
@@ -93,6 +95,8 @@ class FirestoreManager: ObservableObject {
             }
         }
     }
+    
+    //MARK: Follower Functions
     
     func addToFollowers(uid: String) {
         userData.followers.append(uid)
